@@ -1,17 +1,5 @@
-using System;
-using System.Collections.Generic;
-
-public class Program
-{
-    public static void Main()
+public static bool Exist(char[,] board, string word)
     {
-        char[,] board = {
-            {'A', 'B', 'C', 'E'},
-            {'S', 'F', 'C', 'S'},
-            {'A', 'D', 'E', 'E'}
-        };
+        if (board == null || board.Length == 0) return false;
 
-        string word = "ABCCED";
-
-        Console.WriteLine(Exist(board, word));
-    }
+        bool[,] visited = new bool[board.GetLength(0), board.GetLength(1)];
